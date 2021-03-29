@@ -1,0 +1,240 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*------------------------------end of reset-----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+body{
+	background-color:#87ccbe;
+	color:#13536f;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+button{
+	outline:none;
+	background-color: inherit;
+	border:none;
+	color:#13536f;
+}
+.body{
+	max-width:40vw;
+	min-height:100vh;
+	margin:auto;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+.head-massage{
+	/*background-color:#ebca83;*/
+	display:flex;
+	width: 100%;
+	padding:15px;
+	margin:10px;
+	border-radius:20px;
+	justify-content:center;
+	
+	box-shadow:  10px 10px 20px #73ada2, 
+				-10px -10px 20px #9bebdb;
+}
+.head-msg{
+	/*background-color:#9bd1a9;*/
+	border-radius:10px;
+	padding: 5px 15px;
+	width:90%;
+	overflow:hidden;
+	
+	box-shadow:  inset 5px 5px 10px #73ada2, 
+				inset -5px -5px 10px #9bebdb;
+}
+.head-msg-btn{
+	margin: 0 20px;
+	/*background-color:red;*/
+	border-radius:10px;
+	transition:.3s;
+	box-shadow:  5px 5px 10px #73ada2, 
+				-5px -5px 10px #9bebdb;
+}
+.head-msg-btn:hover{
+	box-shadow:2px 2px 5px #73ada2,-2px -2px 5px #9bebdb;
+	animation: 1s  linear infinite btnBounce
+}
+
+.head-msg-btn:active{
+	color:inherit;
+	animation:none;
+	box-shadow: 5px 5px 10px #9bebdb, 
+				-5px -5px 10px #73ada2;
+}
+@keyframes btnBounce{
+	0%{box-shadow:5px 5px 10px #73ada2,-5px -5px 10px #9bebdb;}
+	50%{box-shadow:1px 1px 1px #73ada2,-1px -1px 1px #9bebdb;}
+	100%{box-shadow:5px 5px 10px #73ada2,-5px -5px 10px #9bebdb;}
+}
+.msg-list{
+	/*background-color:#d291e6;*/
+	flex: 1 0 auto;
+	width:100%;
+	padding:20px 10px;
+}
+.msg-container{
+	/*background-color:#5a78ed;*/
+	display:flex;
+	margin: 15px 10px;
+	padding:  10px;
+	border-radius:20px;
+	box-shadow:  10px 10px 20px #73ada2, 
+				-10px -10px 20px #9bebdb;
+}
+.msg-dont{
+	/*background-color:#93e6c1;*/
+	background: linear-gradient(145deg, #7ab8ab, #90dacb);
+	/*display:inline-block;*/
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:30px;
+	height:30px;
+	line-height:1;
+	text-align:center;
+	font-size:15px;
+	border-radius:50%;
+	box-shadow: 0 0 10px #ff0f3f;
+}
+.msg-text{
+	margin: 0 20px;
+}
+.enter-message{
+	/*background-color:#8487e3;*/
+	width:100%;
+	height:50px;
+	margin:10px;
+	padding:10px;
+	border-radius:20px;
+	box-shadow:  10px 10px 20px #73ada2, 
+				-10px -10px 20px #9bebdb;
+}
+.enter-msg-form{
+	width:100%;
+	display:flex;
+	justify-content:center;
+	height:100%;
+}
+.inpt-enter-msg,
+.inpt-enter-msg:hover,
+.inpt-enter-msg:focus,
+.inpt-enter-msg:active{
+	height:100%;
+	margin: 0 10px;
+	border-radius:20px;
+	padding: 0 10px;
+	border:none;
+	outline:none;
+	color:#13536f;
+	width:60%;
+	background-color:inherit;
+	box-shadow: inset 5px 5px 10px #73ada2, 
+				inset -5px -5px 10px #9bebdb;
+}
+.inpt-enter-msg::placeholder{
+	color:#4f656e;
+}
+.btn-send-new{
+	/*background-color:aqua;*/
+	margin: 0 10px;
+	width:100px;
+	border-radius:20px;
+	box-shadow:  5px 5px 10px #73ada2, 
+             -5px -5px 10px #9bebdb;
+	transition: .3s
+}
+.btn-send-new:hover{
+	animation: 1s  linear infinite btnBounce
+}
+.btn-send-new:active{
+/*	animation: 0.3s  linear infinite btnPrsFall*/
+	animation:none;
+	box-shadow: 5px 5px 10px #9bebdb, 
+				-5px -5px 10px #73ada2;
+}
+@keyframes btnPrsFall{
+	0%{box-shadow:0px 0px 0px #9bebdb,0px 0px 0px #73ada2;}
+	100%{box-shadow:5px 5px 10px #9bebdb,-5px -5px 10px #73ada2;}
+}
+.hidden{
+	display:none;
+}
